@@ -1,4 +1,5 @@
 package com.laioffer.eventreporter;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,9 +9,26 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity implements EventFragment.OnItemSelectListener {
+public class MainActivity extends AppCompatActivity implements EventFragment.OnItemSelectListener, CommentFragment.OnItemSelectListener  {
     private EventFragment mListFragment;
     private CommentFragment mGridFragment;
+
+    @Override
+    public void onItemSelected(int position){
+        if (!isTablet()) {
+            Intent intent = new Intent(this, EventGridActivity.class);
+            intent.putExtra("position", position);
+            startActivity(intent);
+        } else {
+            mGridFragment.onItemSelected(position);
+        }
+
+    }
+    @Override
+    public void onCommentSelected(int position) {
+        mListFragment.onItemSelected(position);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,9 +99,6 @@ public class MainActivity extends AppCompatActivity implements EventFragment.OnI
         super.onDestroy();
         Log.e("Life cycle test", "We are at onDestroy()");
     }
-    @Override
-    public void onItemSelected(int position){
-        mGridFragment.onItemSelected(position);
-    }
+
 
 }

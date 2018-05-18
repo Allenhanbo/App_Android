@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "74581966098-vb952ef143fq0tg4p6thbfstk3oa2f0j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.laioffer.eventreporter",
+            "certificate_hash": "a685bd080438494380374c5184da39443b39f3ac"
+          }
+        },
+        {
           "client_id": "74581966098-qns4ef91vuqrs4ms195f3dok9hl6vop9.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "74581966098-qns4ef91vuqrs4ms195f3dok9hl6vop9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

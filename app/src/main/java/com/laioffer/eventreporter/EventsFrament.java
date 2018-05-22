@@ -17,7 +17,7 @@ public class EventsFrament extends Fragment {
     private ImageView mImageViewAdd;
 
     public EventsFrament() {
-        // Required empty public constructor
+        //Required empty public constructor
     }
 
 
@@ -26,9 +26,10 @@ public class EventsFrament extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_events, container, false);
-        mImageViewAdd = (ImageView) view.findViewById(R.id.img_event_add);
 
+        View view = inflater.inflate(R.layout.fragment_events, container, false);
+
+        mImageViewAdd = (ImageView) view.findViewById(R.id.img_event_add);
         mImageViewAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,7 +38,5 @@ public class EventsFrament extends Fragment {
             }
         });
         return view;
-
     }
-
 }

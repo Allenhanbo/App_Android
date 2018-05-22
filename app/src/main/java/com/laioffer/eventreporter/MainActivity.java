@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity  {
 
         // Firebase uses singleton to initialize the sdk
         mDatabase = FirebaseDatabase.getInstance().getReference();
-
         mUsernameEditText = (EditText) findViewById(R.id.editTextLogin);
         mPasswordEditText = (EditText) findViewById(R.id.editTextPassword);
+
         mSubmitButton = (Button) findViewById(R.id.submit);
         mRegisterButton = (Button) findViewById(R.id.register);
 
@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity  {
                             Toast.makeText(getBaseContext(),"Successfully registered", Toast.LENGTH_SHORT).show();
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
@@ -87,12 +86,10 @@ public class MainActivity extends AppCompatActivity  {
                             Intent myIntent = new Intent(MainActivity.this, EventActivity.class);
                             Utils.username = username;
                             startActivity(myIntent);
-
                         } else {
                             Toast.makeText(getBaseContext(),"Please login again", Toast.LENGTH_SHORT).show();
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
@@ -100,7 +97,6 @@ public class MainActivity extends AppCompatActivity  {
                 });
             }
         });
-
     }
 
 
